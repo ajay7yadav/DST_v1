@@ -1,0 +1,32 @@
+/* .bg-color {
+    background-color:  #fd7e14;
+} */
+.card-pf {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    border-top: 0;
+    box-shadow: 0 0;
+}
+
+.login-pf-page .login-pf-header {
+    margin-bottom: 20px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#kc-content {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}

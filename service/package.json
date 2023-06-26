@@ -1,0 +1,24 @@
+{
+  "name": "backendChat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "cron": "^2.3.1",
+    "crypto-js": "^4.1.1",
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.0",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.3",
+    "nodemon": "^2.0.20"
+  }
+}
