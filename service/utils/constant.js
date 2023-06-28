@@ -6,7 +6,8 @@ const Routes = {
     updatePass : "/dst/v1/updatepassword",
     createTodo : "/dst/v1/todo/create",
     getAllTodo : "/dst/v1/todo/getAll",
-    getProfile : "/dst/v1/todo/profile"
+    getProfile : "/dst/v1/todo/profile",
+    updateProfile : "/dst/v1/todo/updateProfile",
 }
 
 module.exports = Routes

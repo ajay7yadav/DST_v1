@@ -6,7 +6,8 @@ const RouteURL = {
   updatePass: `${process.env.REACT_APP_PORT}/dst/v1/updatepassword`,
   createTodo: `${process.env.REACT_APP_PORT}/dst/v1/todo/create`,
   getAllTodo: `${process.env.REACT_APP_PORT}/dst/v1/todo/getAll`,
-  getProfile : `${process.env.REACT_APP_PORT}/dst/v1/todo/profile`
+  getProfile : `${process.env.REACT_APP_PORT}/dst/v1/todo/profile`,
+  updateProfile : `${process.env.REACT_APP_PORT}/dst/v1/todo/updateProfile`,
 };
 
 const Redirects = {

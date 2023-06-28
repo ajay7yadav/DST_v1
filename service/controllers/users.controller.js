@@ -178,9 +178,13 @@ exports.updateProfile = async ( req, res) =>{
   const body = req.body;
   const user_id = req.query.dst_id;
   try {
-
+    console.log("Body ",body);
     await User.updateOne({dst_id : user_id}, {$set : body});
+    res.status(201).send({
+      status : true,
+      message : 'profile updated !'
+    })
   } catch (err) {
-    res.status(500).send({ message: `${error.message}` });
+    res.status(500).send({ message: `${err.message}` });
   }
 }

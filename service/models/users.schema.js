@@ -16,6 +16,12 @@ const User = new mongoose.Schema({
     sex : {
         type : String
     },
+    address : {
+        type : String
+    },
+    phone : {
+        type : String
+    },
     dst_id : {
         type : String
     },

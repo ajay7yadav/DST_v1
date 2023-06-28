@@ -8,4 +8,5 @@ module.exports = (app) =>{
     app.get(Routes.matchOtp, controller.matchOtp);
     app.post(Routes.updatePass, controller.updatePassword);
     app.get(Routes.getProfile, controller.userProfile);
+    app.put(Routes.updateProfile, controller.updateProfile);
 }
