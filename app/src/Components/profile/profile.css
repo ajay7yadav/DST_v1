@@ -5,3 +5,33 @@
 .edit:hover {
     background-color: hwb(54 50% 0%);
 }
+
+.prf {
+    padding: 20px;
+    margin: 15px;
+    margin-top: 82px;
+}
+
+.rad {
+    border-radius : 10px
+}
+
+.btn-rad {
+    margin-top: 15px;
+}
+
+.cl-btn {
+    border-radius: 20px;
+}
+
+.rad:focus {
+    /* color: #212529;
+    background-color: #fff; */
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none
+}
+
+.bg-d {
+    background-color: rgb(225 243 253);
+}

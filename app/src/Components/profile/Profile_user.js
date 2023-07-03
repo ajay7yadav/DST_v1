@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RouteURL } from "../../language/constant";
-import './profile.css';
+import "./profile.css";
 import sideImg from "../../image/slider-img.jpg";
 
 export default function Profile() {
@@ -32,27 +32,29 @@ export default function Profile() {
   const HandlerEdit = () => {
     if (edit === false) {
       setEdit(true);
-    }
-    else {
+    } else {
       setEdit(false);
     }
-  }
+  };
 
   const updateJSON = {
     firstname: firstname,
     lastname: lastname,
     address: address,
     phone: phone,
-    updated_at: Date.now()
-  }
+    updated_at: Date.now(),
+  };
   const HandlerUpdate = async () => {
-
     try {
-      const res = await axios.put(`${RouteURL.updateProfile}?dst_id=${userid}`, updateJSON, {
-        headers: {
-          "Content-Type": "Application/json"
+      const res = await axios.put(
+        `${RouteURL.updateProfile}?dst_id=${userid}`,
+        updateJSON,
+        {
+          headers: {
+            "Content-Type": "Application/json",
+          },
         }
-      });
+      );
       if (res.data.status === true) {
         setEdit(true);
       }
@@ -60,18 +62,97 @@ export default function Profile() {
       setEdit(true);
       console.log(err);
     }
-
-  }
+  };
 
   return (
     <>
       <div className="hero_area">
-        {/* slider section */}
         <section className=" slider_section position-relative">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-md-5" style={{backgroundColor:"#e0f4f5"}}></div>
-              <div className="col-md-6 px-0">
+              <div className="col-md-7 bg-d" >
+              <div className="container prf">
+                <div className="col-6 ">
+                  <label className="form-label"> Firstname : </label>
+                  <input
+                    className="form-control rad"
+                    type="text"
+                    placeholder=""
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
+                    readOnly={edit}
+                  />
+                </div>
+
+                <div className="col-6">
+                  <label className="form-label">Lastname : </label>
+                  <input
+                    className="form-control rad"
+                    type="text"
+                    placeholder=""
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
+                    readOnly={edit}
+                  />
+                </div>
+
+                <div className="col-6">
+                  <label className="form-label">Email : </label>
+                  <input
+                    className="form-control rad"
+                    placeholder=""
+                    value={Email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                    disabled={true}
+                    readOnly={edit}
+                  />
+                </div>
+
+                <div className="col-6">
+                  <label className="form-label">Address : </label>
+                  <input
+                    className="form-control rad"
+                    placeholder=""
+                    value={address}
+                    onChange={(e) => {
+                      setAddress(e.target.value);
+                    }}
+                    readOnly={edit}
+                  />
+                </div>
+
+                <div className="col-6">
+                  <label className="form-label">Mobile : </label>
+                  <input
+                    className="form-control rad"
+                    placeholder=""
+                    value={phone}
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                    }}
+                    readOnly={edit}
+                  />
+                </div>
+
+                <div className="col-6 btn-rad d-flex justify-content-between">
+                  <button
+                    className="btn btn-warning cl-btn"
+                    onClick={() => HandlerEdit()}
+                  >
+                    Edit Profile
+                  </button>
+                  <button
+                    className="btn btn-success cl-btn"
+                    onClick={() => HandlerUpdate()}
+                  >
+                    Update Profile
+                  </button>
+                </div>
+              </div>
+              </div>
+              <div className="col-md-5 px-0">
                 <div className="img-box">
                   <img src={sideImg} alt="" />
                 </div>
@@ -79,75 +160,6 @@ export default function Profile() {
             </div>
           </div>
         </section>
-        {/* end slider section */}
-      </div>
-      <div className="">
-        <div className="row">
-          <div className="col-mb-12">
-            <div className="col-6">
-              <label className="form-label"> Firstname : </label>
-              <input
-                className="form-control"
-                type="text"
-                placeholder=""
-                value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
-                readOnly={edit}
-              />
-            </div>
-
-            <div className="col-6">
-              <label className="form-label">Lastname : </label>
-              <input
-                className="form-control"
-                type="text"
-                placeholder=""
-                value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
-                readOnly={edit}
-              />
-            </div>
-
-            <div className="col-6">
-              <label className="form-label">Email : </label>
-              <input
-                className="form-control"
-                placeholder=""
-                value={Email}
-                onChange={(e) => { setEmail(e.target.value) }}
-                disabled={true}
-                readOnly={edit}
-              />
-            </div>
-
-            <div className="col-6">
-              <label className="form-label">Address : </label>
-              <input
-                className="form-control"
-                placeholder=""
-                value={address}
-                onChange={(e) => { setAddress(e.target.value) }}
-                readOnly={edit}
-              />
-            </div>
-
-            <div className="col-6">
-              <label className="form-label">Mobile : </label>
-              <input
-                className="form-control"
-                placeholder=""
-                value={phone}
-                onChange={(e) => { setPhone(e.target.value) }}
-                readOnly={edit}
-              />
-            </div>
-
-            <div className="col-6">
-              <button className="btn btn-warning" onClick={() => HandlerEdit()}>Edit</button>
-              <button className="btn btn-success" onClick={() => HandlerUpdate()}>Update Profile</button>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );
