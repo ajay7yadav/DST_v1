@@ -35,3 +35,26 @@
 .bg-d {
     background-color: rgb(225 243 253);
 }
+
+.pro-img {
+    margin-top: 70px;
+    margin-left: 42px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #9e9292;
+}
+
+.upl-btn {
+    margin-top: 10px;
+}
+
+.avatar:hover {
+    opacity: 1;
+    border: 3px solid #555;
+    cursor: pointer;
+}
